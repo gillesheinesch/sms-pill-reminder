@@ -1,0 +1,26 @@
+{
+  "name": "sms-pill-reminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gillesheinesch/sms-pill-reminder.git"
+  },
+  "keywords": [
+    "pill",
+    "girls",
+    "girl",
+    "reminder",
+    "pill-reminder"
+  ],
+  "author": "Gilles Heinesch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gillesheinesch/sms-pill-reminder/issues"
+  },
+  "homepage": "https://github.com/gillesheinesch/sms-pill-reminder#readme"
+}

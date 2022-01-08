@@ -4,7 +4,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 const cron = require('node-cron');
 
-console.log(`SMS Pill reminder started at ${Date.now()}`);
+console.log(`SMS Pill reminder started at ${moment(Date.now()).format('DD/MM/YYYY HH:mm')}`);
 
 cron.schedule('05 20 * * *', async () => {
   // Inital data of dates (start and end date)

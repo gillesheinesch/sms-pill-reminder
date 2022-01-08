@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/gillesheinesch/sms-pill-reminder/issues"
   },
-  "homepage": "https://github.com/gillesheinesch/sms-pill-reminder#readme"
+  "homepage": "https://github.com/gillesheinesch/sms-pill-reminder#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "node-cron": "^3.0.0",
+    "twilio": "^3.72.0"
+  }
 }

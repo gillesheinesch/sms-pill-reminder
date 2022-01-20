@@ -7,12 +7,14 @@ const moment = require('moment');
 
 console.log(`SMS Pill reminder started at ${Date.now()}`);
 
+// Trigger every day at 20h05 pm
 cron.schedule('05 20 * * *', async () => {
   // Inital data of dates (start and end date)
   const startDate = '11/01/2022'
   const endDate = moment(newDate(startDate)).add(20, 'days').format('DD/MM/YYYY');
 
-  console.log(startDate, 'inital start/end date', endDate);
+  console.log('Start date', startDate, 'before loop');
+  console.log('End date', endDate, 'before loop')
 
   // Set new dates for the new cycle
   if (moment().isAfter(endDate)) {
@@ -26,7 +28,8 @@ cron.schedule('05 20 * * *', async () => {
     }
   }
 
-  console.log('end/start date', startDate, endDate)
+  console.log('Start date', startDate, 'after loop');
+  console.log('End date', endDate, 'after loop')
 
   // Send the reminder
   if (moment(newDate(startDate)).isBefore()) {

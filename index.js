@@ -10,18 +10,17 @@ console.log(`Pill Boss started at ${moment().format('DD/MM/YYYY HH:mm')}`);
 // Trigger every day at 20h05 pm
 cron.schedule('05 20 * * *', async () => {
   // Inital data of dates (start and end date)
-  const startDate = '11/01/2022'
-  const endDate = moment(startDate, 'DD/MM/YYYY').add(20, 'days').format('DD/MM/YYYY');
+  let startDate = '08/03/2022'
+  let endDate = moment(startDate, 'DD/MM/YYYY').add(20, 'days');
 
-  console.log('Start date', startDate, 'before loop');
-  console.log('End date', endDate, 'before loop')
+  console.log(startDate, endDate);
 
   // Set new dates for the new cycle
-  if (moment().isAfter(moment(endDate, 'DD/MM/YYYY'))) {
+  if (moment().isAfter(endDate)) {
     for (let i = 0; i < 100000; i += 1) {
-      if (moment().isAfter(moment(endDate, 'DD/MM/YYYY'))) {
-        startDate = moment(startDate, 'DD/MM/YYYY').add(4, 'weeks')
-        endDate = moment(startDate, 'DD/MM/YYYY').add(48, 'days')
+      if (moment().isAfter(endDate)) {
+        startDate = moment(startDate, 'DD/MM/YYYY').add(27, 'days').format('DD/MM/YYYY')
+        endDate = moment(startDate, 'DD/MM/YYYY').add(20, 'days')
       } else {
         break;
       }

@@ -31,7 +31,7 @@ cron.schedule('* 20 * * *', async () => {
   console.log('End date', endDate, 'after loop')
 
   // Send the reminder
-  if (moment(endDate).isBefore()) {
+  if (moment(endDate).isBefore(moment())) {
     console.log('test')
     client.messages
       .create({

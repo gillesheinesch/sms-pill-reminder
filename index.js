@@ -11,7 +11,7 @@ console.log(`Pill Boss started at ${moment().format('DD/MM/YYYY HH:mm')}`);
 cron.schedule('* * * * *', async () => {
   // Inital data of dates (start and end date)
   let startDate = '08/03/2022'
-  let endDate = moment(startDate, 'DD/MM/YYYY').add(20, 'days');
+  let endDate = moment(startDate, 'DD/MM/YYYY').add(21, 'days');
 
   console.log(startDate, endDate);
 
@@ -20,7 +20,7 @@ cron.schedule('* * * * *', async () => {
     for (let i = 0; i < 100000; i += 1) {
       if (moment().isAfter(endDate)) {
         startDate = moment(startDate, 'DD/MM/YYYY').add(27, 'days').format('DD/MM/YYYY')
-        endDate = moment(startDate, 'DD/MM/YYYY').add(20, 'days')
+        endDate = moment(startDate, 'DD/MM/YYYY').add(21, 'days')
       } else {
         break;
       }
@@ -31,7 +31,7 @@ cron.schedule('* * * * *', async () => {
   console.log('End date', endDate, 'after loop')
 
   // Send the reminder
-  if (moment(startDate, 'DD/MM/YYYY').isBefore()) {
+  if (moment(endDate, 'DD/MM/YYYY').isBefore()) {
     client.messages
       .create({
         body: `Take your pill baby. ${moment(endDate).diff(moment(), 'days')} days till 🩸`,

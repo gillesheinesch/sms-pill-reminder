@@ -8,7 +8,7 @@ const moment = require('moment');
 console.log(`Pill Boss started at ${moment().format('DD/MM/YYYY HH:mm')}`);
 
 // Trigger every day at 20h05 pm
-cron.schedule('18 20 * * *', async () => {
+cron.schedule('* 20 * * *', async () => {
   // Inital data of dates (start and end date)
   let startDate = '08/03/2022'
   let endDate = moment(startDate, 'DD/MM/YYYY').add(21, 'days');
@@ -32,6 +32,7 @@ cron.schedule('18 20 * * *', async () => {
 
   // Send the reminder
   if (moment(endDate).isBefore()) {
+    console.log('test')
     client.messages
       .create({
         body: `Take your pill baby. ≈${moment(endDate).diff(moment(), 'days').add('2', 'days')} days till 🩸`,
